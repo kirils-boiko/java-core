@@ -1,4 +1,8 @@
-package com.example.game;
+package com.example.mypackage;
+
+import com.example.game.Monster;
+import com.example.game.Player;
+import com.example.game.Saveable;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -7,20 +11,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ISaveable getrekt333 = new Player("getrekt333", 100, 90, "War Hammer");
+        Saveable getrekt333 = new Player("getrekt333", 100, 90, "War Hammer");
         System.out.println(getrekt333.toString());
         saveObject(getrekt333);
 
-        ISaveable newPlayer = new Player("", -1, -1, "");
+        Saveable newPlayer = new Player("", -1, -1, "");
         System.out.println(newPlayer);
         writeObject(newPlayer);
         saveObject(newPlayer);
 
-        ISaveable baseMonster = new Monster("zombie", 20, 10);
+        Saveable baseMonster = new Monster("zombie", 20, 10);
         System.out.println(baseMonster);
         saveObject(baseMonster);
 
-        ISaveable advancedMonster = new Monster("", -1, -1);
+        Saveable advancedMonster = new Monster("", -1, -1);
         writeObject(advancedMonster);
         System.out.println(advancedMonster);
         saveObject(advancedMonster);
@@ -58,13 +62,13 @@ public class Main {
         return values;
     }
 
-    public static void saveObject(ISaveable object) {
+    public static void saveObject(Saveable object) {
         for (int i = 0; i < object.read().size(); i++) {
             System.out.println("Saving " + object.read().get(i) + " to storage device");
         }
     }
 
-    public static void writeObject(ISaveable object) {
+    public static void writeObject(Saveable object) {
         ArrayList<String> values = readValues();
         object.write(values);
     }
