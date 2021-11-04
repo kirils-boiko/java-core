@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="binsearch">
+    <output-path>$PROJECT_DIR$/out/artifacts/binsearch</output-path>
+    <root id="archive" name="binsearch.jar">
+      <element id="directory" name="com">
+        <element id="directory" name="example">
+          <element id="directory" name="binsearch">
+            <element id="file-copy" path="$PROJECT_DIR$/out/production/CollectionsOverview/com/example/binsearch/BinarySearch.class" />
+          </element>
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
