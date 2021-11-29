@@ -1,0 +1,22 @@
+
+-- Database = container for all the data you store;
+
+-- Database Dictionary = a comprehensive list of the structure and types of
+--  data in the database;
+
+-- Table = collection of related data held in the database;
+
+-- Field/column = basic (individual) unit of data in a table;
+
+-- Row/record = a single set of data containing all the columns
+--  in the table;
+
+-- Flat File database = database that stores all data in a single table
+--  (results in duplication);
+
+-- Database Normalization = splitting the table data in relational
+--  tables to avoid duplication;
+
+-- View = a selection of rows and columns, possible from more than
+--  one table;
+

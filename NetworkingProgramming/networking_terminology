@@ -1,0 +1,29 @@
+
+// Networking Programming Terminology
+
+Network = a system of computers connected together so that they can
+    share resources and communicate with each other;
+
+Networking = refers to how the connected computers communicate
+
+java.net = package used to establish connections between computers and
+    send messages between them;
+
+Intranet = private network;
+
+Client/server network configuration = one or more hosts on the network act
+    as servers and other hosts are clients connected to the server;
+
+Transport protocol = a way that computers on a network communicate with
+    each other (e.g., TCP and UDP);
+
+Port = a communication endpoint which number is used to route the data to
+    the target application that's waiting for it;
+
+localhost = often, the IP address 127.0.0.1 used to identify the host when
+    the client and the server are on the same host;
+
+Handshaking = specific messages sent to establish a connection between the
+    client and the server;
+
+Packets = a way the data is sent the data between client and server;

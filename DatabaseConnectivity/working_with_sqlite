@@ -1,0 +1,16 @@
+
+-- to start sqlite3 in a shell: sqlite3
+-- to quit the sqlite3: .quit
+
+-- to backup the current database: .backup backup_name
+-- to restore a table from backup: .restore backup_name
+
+-- to show headers of the columns: .headers on
+
+-- to list the tables in the current database: .tables
+-- to print structure of the tables in the current database: .schema
+-- to see the commands required to recreate the tables: .dump
+
+-- to work with tables, you use the standard SQL syntax;
+
+-- to read the sql script in .sql file: .read file_name.sql

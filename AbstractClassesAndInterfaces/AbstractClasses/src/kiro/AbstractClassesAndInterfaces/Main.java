@@ -17,5 +17,7 @@ public class Main {
         penguin.breathe();
         penguin.eat();
         penguin.fly();
+
+        Animal.staticMethod();
     }
 }
