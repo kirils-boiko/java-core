@@ -1,0 +1,90 @@
+-- Solutions to SQLite Challenges in Section 19: Databases
+-- Created by Kirils Boiko on Nov 18 2021
+
+
+-- ----------------------------------------------
+
+-- Select the titles of all the songs on the album 'Forbidden'
+SELECT albums.name AS album, songs.track, songs.title
+FROM albums
+INNER JOIN songs
+ON albums._id = songs.album
+WHERE albums.name = 'Forbidden';
+
+-- Repeat the previous but in track order
+SELECT albums.name AS album, songs.track, songs.title
+FROM albums
+INNER JOIN songs
+ON albums._id = songs.album
+WHERE albums.name = 'Forbidden'
+ORDER BY songs.track;
+
+-- Display songs for the band 'Deep Purple'
+SELECT artists.name AS artist, albums.name AS album, songs.track, songs.title
+FROM artists
+INNER JOIN albums
+ON artists._id = albums.artist
+INNER JOIN songs
+ON albums._id = songs.album
+WHERE artists.name = 'Deep Purple'
+ORDER BY albums.name, songs.track COLLATE NOCASE ASC;
+
+-- Rename the band Mehitabel to One Kitten
+UPDATE artists
+SET name = 'One Kitten'
+WHERE name = 'Mehitabel';
+
+-- Select the titles of all the songs by Aerosmith in alphabetical
+--  order, include only title in output;
+SELECT songs.title
+FROM artists
+INNER JOIN albums
+ON artists._id = albums.artist
+INNER JOIN songs
+ON albums._id = songs.album
+WHERE artists.name = 'Aerosmith'
+ORDER BY songs.title COLLATE NOCASE ASC;
+
+-- Count the records from the previous query
+SELECT COUNT(songs.title)
+FROM artists
+INNER JOIN albums
+ON artists._id = albums.artist
+INNER JOIN songs
+ON albums._id = songs.album
+WHERE artists.name = 'Aerosmith'
+ORDER BY songs.title COLLATE NOCASE ASC;
+
+-- Select the unique titles of all the songs by Aerosmith in alphabetical
+--  order, include only title in output;
+SELECT DISTINCT songs.title
+FROM artists
+INNER JOIN albums
+ON artists._id = albums.artist
+INNER JOIN songs
+ON albums._id = songs.album
+WHERE artists.name = 'Aerosmith'
+ORDER BY songs.title COLLATE NOCASE ASC;
+
+-- Count the records from the previous query
+SELECT COUNT(DISTINCT songs.title)
+FROM artists
+INNER JOIN albums
+ON artists._id = albums.artist
+INNER JOIN songs
+ON albums._id = songs.album
+WHERE artists.name = 'Aerosmith'
+ORDER BY songs.title COLLATE NOCASE ASC;
+
+-- Count the distinct songs, distinct albums, and distinct artists from
+--  previous query
+SELECT COUNT(DISTINCT songs.title),
+    COUNT(DISTINCT albums._id),
+    COUNT(DISTINCT artists.name)
+FROM artists
+INNER JOIN albums
+ON artists._id = albums.artist
+INNER JOIN songs
+ON albums._id = songs.album
+WHERE artists.name = 'Aerosmith'
+ORDER BY songs.title COLLATE NOCASE ASC;

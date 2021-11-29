@@ -14,4 +14,8 @@ public abstract class Animal {
     public String getName() {
         return name;
     }
+
+    public static void staticMethod() {
+        System.out.println("static method of abstract class");
+    }
 }
